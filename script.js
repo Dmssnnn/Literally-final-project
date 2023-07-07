@@ -1,9 +1,4 @@
 
-
-
-
-
-
 const createAccount = document.getElementById("create-account")
 const form = document.getElementById("form")
 createAccount.addEventListener('click', getRegistrationForm)
@@ -91,7 +86,7 @@ function getLoginValidation () {
     const email = document.getElementById("email")
     const password = document.getElementById("password")
 
-    if(email.value === "dimitrialavidze7@gmail.com" && password.value === "dimigigi1"){
+    if(email.value === "dimitrialavidze7@gmail.com" && password.value === "dimigigi12"){
         alert("success")
         window.open("authorized.html")
         return true;
@@ -108,38 +103,50 @@ const modelsArr = [
         id:1,
         model : 718,
         price : 57300,
-        image: " "
+        image: "images/porsche-small.webp "
     },
 
     {   
         id:2,
         model : 911,
         price : 63300,
-        image: ""
+        image: "images/porsche-small-gray.webp"
     },
     {   
         id:3,
         model : "Taycan",
         price : 63300,
-        image: " "
+        image: " images/porsche-small.webp  "
     },
     {   
-        id:2,
+        id:4,
         model : "Panamera",
         price : 63300,
-        image: " "
+        image: "images/cavea.webp"
     },
     {   
-        id:2,
+        id:5,
         model : "Macan",
         price : 63300,
-        image: " "
+        image: "images/porsche-small-panamera(1).webp "
     },
     {   
-        id:2,
+        id:6,
+        model : "Porsche",
+        price : 63300,
+        image: "images/porsche-macan.webp"
+    },
+    {   
+        id:6,
+        model : "Porsche Jeep",
+        price : 63300,
+        image: "images/porsche-jeep.webp"
+    },
+    {   
+        id:6,
         model : "Cayenne",
         price : 63300,
-        image: " "
+        image: "images/porsche-small-gray.webp"
     },
 ]
 const getModels = () => {
@@ -151,15 +158,18 @@ const getModels = () => {
         modelsWrapperDiv.classList.add("modelwrapperBlocks")
         modelsWrapperDiv.innerHTML = 
         `
-        <h5 class= "">${modelsArr[i].model}</h5>
+        <h5>${modelsArr[i].model}</h5>
         <h6>${modelsArr[i].price}$</h6>
-        <img src = "">${modelsArr[i].image}</img>`
+        <img src = ${modelsArr[i].image}>`
         
         const detailsButton = document.createElement("button")
         detailsButton.textContent = "Details"
         modelsWrapperDiv.appendChild(detailsButton)
 
-        modelsWrapper.appendChild(modelsWrapperDiv)
+        if( modelsWrapper){
+           modelsWrapper.appendChild(modelsWrapperDiv)
+        }
+        // modelsWrapper.appendChild(modelsWrapperDiv)
     
 
         detailsButton.addEventListener("click",()=> {
@@ -176,12 +186,12 @@ getModels();
 
 
 
-const porscheDetails = [
+const porscheDetailsArray = [
     {
       "city_mpg": 18,
-      "class": "midsize car",
+      "class": "coupe",
       "combination_mpg": 21,
-      "cylinders": 4,
+      "cylinders": 8,
       "displacement": 2.2,
       "drive": "fwd",
       "fuel_type": "gas",
@@ -189,12 +199,39 @@ const porscheDetails = [
       "make": "toyota",
       "model": "camry",
       "transmission": "a",
-      "year": 1993
+      "year": 1993,
     }
 ]    
 
-// const getPorscheDetails =  async () => {
-//     try {
-//         await new Promise ((PorscheDetails => setInterval))
-//     }
-// }
+
+const getPorscheDetails = () => {
+
+    for(let i = 0 ; i < porscheDetailsArray.length; i++){
+        const porsche911Detail = document.getElementById("text911")
+        const porsche911DetailDiv = document.createElement("div")
+        porsche911DetailDiv.classList.add("porsche-details-div")
+        porsche911DetailDiv.innerHTML = `
+         <h3>The New Carrera 911</h3>
+         <span class="porsche-911-span">city MPG : ${porscheDetailsArray[i].city_mpg}</span>
+         <span>class : ${porscheDetailsArray[i].class}</span>
+         <span>combination MPG : ${porscheDetailsArray[i].combination_mpg} </span>
+         <span> cylinders : ${porscheDetailsArray[i].cylinders} </span>
+         <span> displacement : ${porscheDetailsArray[i].displacement} </span>
+         <span>drive : ${porscheDetailsArray[i].drive}</span>
+         <span> fuel type : ${porscheDetailsArray[i].fuel_type} </span>
+         <span> highway MPG : ${porscheDetailsArray[i].highway_mpg} </span>
+         <span> model : ${porscheDetailsArray[i].drive}</span>
+         <span>transmission : ${porscheDetailsArray[i].transmission}</span>
+         <span>year : ${porscheDetailsArray[i].year}</span>
+        `
+        porsche911Detail.appendChild(porsche911DetailDiv)
+
+    }
+}
+
+
+if(window.location.href === "http://127.0.0.1:5500/porscheModels.html"){
+    getPorscheDetails();
+}
+
+console.log(window.location.href)
