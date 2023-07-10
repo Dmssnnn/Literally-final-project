@@ -21,7 +21,7 @@ function getRegistrationForm () {
         localStorage.setItem("password",password.value)
         localStorage.setItem("email",email.value)
         localStorage.setItem("phone",phone.value)  
-        
+        localStorage.setItem("age",age.value)
     })
 
    const remover = document.getElementById("remover")
@@ -30,7 +30,7 @@ function getRegistrationForm () {
    function displayNoneFunction() {
     if("click"){
         form.style.display = "none"
-    }else{
+    }else{  
         form.style.display = "flex"
         return true;
     }
@@ -45,12 +45,8 @@ function getValidation () {
     const password = document.getElementById("password")
     const phone = document.getElementById("phone")
     const email = document.getElementById("email")
-
-
-
-
-
-    if(name.value === `` || surname.value === `` || password.value === `` || phone.value ===``|| email.value ===``){
+    const age  = document.getElementById("age")
+    if(name.value === `` || surname.value === `` || password.value === `` || phone.value ===``|| email.value ===`` || age.value === ``){
         const span = document.createElement("span")
         span.classList.add("form-span")
         span.textContent = "fill all gap !!!"
@@ -70,23 +66,28 @@ function getValidation () {
 
 
 
-const login = document.getElementById("login")
-const loginForm = document.getElementById("forma")
-login.addEventListener('click', loginFunc);
+
 
 function loginFunc() {
-    loginForm.innerHTML = `
-    <input id="email" type="email" placeholder="Enter Your Email">
-    <input id="password" type="password" placeholder="Enter Your password">
-    <button id="submit">Submit</button>
-    `
-}
+    const login = document.getElementById("login")
+    const loginForm = document.getElementById("forma")
+    login.addEventListener('click', () => {
+        loginForm.innerHTML = `
+        <input id="email" type="email" placeholder="Enter Your Email">
+        <input id="password" type="password" placeholder="Enter Your password">
+        <button id="submit">Submit</button>
+        `
 
+    })
+}
+if(window.location.href === "http://127.0.0.1:5500/index.html?#"){
+    loginFunc();
+}
 function getLoginValidation () {
     const email = document.getElementById("email")
     const password = document.getElementById("password")
 
-    if(email.value === "dimitrialavidze7@gmail.com" && password.value === "dimigigi12"){
+    if(email.value === "dimitrialavidze7@gmail.com" && password.value === "dimigigi123"){
         alert("success")
         window.open("authorized.html")
         return true;
@@ -95,8 +96,6 @@ function getLoginValidation () {
         return false;
     }
 }
-
-
 
 const modelsArr = [
     {   
@@ -182,7 +181,7 @@ const getModels = () => {
         })
     }
 }
-getModels();
+getModels()
 
 
 
@@ -224,6 +223,7 @@ const getPorscheDetails = () => {
          <span>transmission : ${porscheDetailsArray[i].transmission}</span>
          <span>year : ${porscheDetailsArray[i].year}</span>
         `
+
         porsche911Detail.appendChild(porsche911DetailDiv)
 
     }
@@ -234,4 +234,35 @@ if(window.location.href === "http://127.0.0.1:5500/porscheModels.html"){
     getPorscheDetails();
 }
 
-console.log(window.location.href)
+
+
+
+const getMenuBar = () => {
+    const menu = document.getElementById("menu")
+    menu.addEventListener('click', () => {
+        const divBar = document.createElement("div")
+        const insideDivBar = document.createElement("div")
+        insideDivBar.classList.add("inside-div-bar")
+        insideDivBar.innerHTML = `
+        <div class ="porsche-menu-911">Porshe911 Details</div>
+        <div class="panamera-menu">Porsche Panamera Details</div>
+        <div class="ragaca">Porsche Raghac details</div>
+        `
+        divBar.appendChild(insideDivBar)
+        divBar.classList.add("div-bar")
+        menu.appendChild(divBar)
+
+        insideDivBar.addEventListener("click", () => {
+            if("click"){
+                window.open("porscheModels.html")
+                return true;
+            } else {
+                return false;
+            }
+        })
+    })
+
+}
+if(window.location.href === "http://127.0.0.1:5500/authorized.html#"){
+    getMenuBar()
+}

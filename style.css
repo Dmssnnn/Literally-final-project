@@ -73,6 +73,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .header-create-account {
     display: flex;
@@ -207,14 +208,27 @@ a {
 .registration {
     margin-top: 100px;
     width: 100%;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.menuBar {
-    width: 200px;
+.div-bar {
+    width: 100%;
     height: 300px;
-    background-color: bleu;
+    background-color: white;
+    position: absolute;
+    left:0;
+    top: 150%;
+    z-index: 20;
+    border: 1px solid blue;
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+@keyframes divBar {
+    
 }
 .porsche-details-911-wrap {
     border: 1px solid azure;
@@ -229,16 +243,39 @@ a {
     font-family: poppins;
     color: azure;
 }
-
+.porsche-details-img {
+    width: 100%;
+}
+.porsche-jeep-wrap {
+    border: 1px solid azure;
+    padding: 1%;
+}
+.porsche-jeep-wrap:hover {
+    background-color: black;
+}
 .porsche-details {
     margin-top: 100px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+}
+.porsche-details-911-wrap:hover {
+    background-color: black;
+    
+}
+.jeep-text span:hover  {
+    color: red;
+}
+.porsche-details-911-text span:hover {
+    color: red;
 }
 .porsche-details img {
-    width: 500px
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #form {
     
@@ -306,7 +343,94 @@ a {
     font-family: poppins;
     font-weight: 700;
 }
+.swiperi2 img{
+    width: 300px;
+}
+.porsche-live-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 5px;
+}
+.inside-div-bar {
+    font-size: 30px;
+    display: flex;
+    color: red;
+    gap: 20px;
+    flex-direction: column;
+}
+.porsche-menu-911:hover {
+    background-color: pink;
+    animation-name: porsche911;
+    animation-duration: 1s;
+    animation-timing-function: 1s;
+    animation-fill-mode: both;
 
+}
+@keyframes porsche911 {
+    from {
+        background-color: pink;
+        font-size: 30px;
+    }
+    to {
+        background-color: black;
+        color: white;
+        font-size: 20px;
+    }
+}
+.panamera-menu:hover {
+    background-color: pink;
+    animation-name: panamera;
+    animation-duration: 1s;
+    animation-timing-function: 1s;
+    animation-fill-mode: both;
+}
+@keyframes panamera {
+    from {
+        background-color: pink;
+        font-size: 30px;
+    }
+    to {
+        background-color: black;
+        color: white;
+        font-size: 20px;
+    }
+}
+.ragaca:hover {
+    background-color: pink;
+    animation-name: ragaca;
+    animation-duration: 1s;
+    animation-timing-function: 1s;
+    animation-fill-mode: both;
+}
+@keyframes ragaca {
+    from {
+        background-color: pink;
+        font-size: 30px;
+    }
+    to {
+        background-color: black;
+        color: white;
+        font-size: 20px;
+    }
+    
+}
+.porsche-live-wrapper span {
+    font-size: 100px;
+    position: absolute;
+    font-family: Poppins;
+}
+.porsche-live-wrapper div {
+    width: 300px;
+}
+.porsche-live-wrapper div img {
+    width: 100%;
+}
+.porsche-live-wrapper div img:hover {
+    opacity: 0.3;
+}
 ::-webkit-input-placeholder {
     font-family: poppins;
     color: black;
@@ -329,6 +453,16 @@ a {
     animation-duration: 1s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
+}
+.inside-dive-of-live {
+    position: relative;
+}
+.instagram-icon {
+    width: 20px;
+    display: block;
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
 }
 .header-right-nav-wrapper {
     display:flex;
@@ -417,6 +551,15 @@ swiper-container {
   }
   /* ====== */
 
+.models-footer {
+    bottom: 0;
+    position: relative;
+    padding: 2%;
+    background-color: #191f22;
+    color : #fff;
+    width: 100%;
+    margin-top: calc( 771px - 271px);
+}
 
 footer {
     bottom: 0;
@@ -426,5 +569,99 @@ footer {
     color : #fff;
     width: 100%;
     font-family: poppins;
-    margin-top: calc(794.72px - 157.54px);
+    margin-top: calc(794.72px - 457.54px);
+}
+
+
+@media (max-width:1024px) {
+    .welcome-section {
+        width: 100%;
+        display: flex;
+        margin-top: 8%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .porsche-text {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        font-size: 35px;
+        font-family: poppins;
+        color: ivory;
+        text-align: center;
+    }
+    .porsche-middle-paragraph h2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        font-size: 35px;
+        font-family: poppins;
+        color: ivory;
+        text-align: center;
+    }
+    .swiper-span {
+        padding: 1%;
+        position: absolute;
+        font-size: 20px;
+        color: white;
+        font-family: poppins;
+    }
+    .model-text {
+        width: 100%;
+        display: flex;
+        margin-top: 100px;
+        justify-content: center;
+        /* padding-left: 5%; */
+        font-size: 40px;
+        text-align: center;
+        font-family: poppins;
+    }
+    .porsche-live-text {
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /* padding-left: 5%; */
+        font-size: 30px;
+        font-family: poppins;
+    }
+    .porsche-live-wrapper span {
+        font-size: 100px;
+        position: absolute;
+        font-family: Poppins;
+        display: none;
+    }
+    .div-bar {
+        width: 100%;
+        height: 300px;
+        background-color: white;
+        position: absolute;
+        left: 0;
+        top: 150%;
+        z-index: 20;
+        border: 1px solid black;
+        display: flex;
+        border-radius: 20px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: none;
+    }
+    .porsche-details img {
+        width: 100%;
+    }
+    .porsche-details {
+        margin-top: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+    }
 }
