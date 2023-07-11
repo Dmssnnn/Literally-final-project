@@ -15,6 +15,7 @@ function getRegistrationForm () {
     <button id="remover">Already Logged In</button> 
     `
     const name = document.getElementById("name")
+    const submit = document.getElementById("submit")
     submit.addEventListener('click', () => {
         localStorage.setItem("name",name.value)
         localStorage.setItem("surname",surname.value)

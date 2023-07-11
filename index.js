@@ -13,15 +13,26 @@ function loginFunc() {
 loginFunc();
 
 
+const login = document.getElementById("login")
+const createAccForm = document.getElementById("form")
+const  logInForm = document.getElementById("forma")
+const headerCreateAccount = document.getElementById("create-account")
+
 const getLoginDisplayNone = () => {
-    const  login = document.getElementById("login")
-    const  createAccount = document.getElementById("registration")
-    login.addEventListener("click", () => {
-       if("click"){
-        createAccount.style.display = "none";
-       }else if(createAccount === `click`){
-        login.style.display = "none"
-       }
+    headerCreateAccount.addEventListener('click', () => {
+        if(createAccForm){
+            logInForm.style.display = "none"
+        }
+
     })
 }
 getLoginDisplayNone();
+
+// const getCreateAccDisplayNone = () => {
+//     login.addEventListener("click",() => {
+//         if(logInForm){
+//             createAccForm.style.display ="none"
+//         }
+//     })
+// }
+// getCreateAccDisplayNone();
