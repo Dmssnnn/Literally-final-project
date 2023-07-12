@@ -19,9 +19,9 @@ const  logInForm = document.getElementById("forma")
 const headerCreateAccount = document.getElementById("create-account")
 
 const getLoginDisplayNone = () => {
-    headerCreateAccount.addEventListener('click', () => {
-        if(createAccForm){
-            logInForm.style.display = "none"
+    login.addEventListener('click', () => {
+        if(logInForm){
+            createAccForm.style.display = "none"
         }
 
     })
@@ -32,6 +32,8 @@ getLoginDisplayNone();
 //     login.addEventListener("click",() => {
 //         if(logInForm){
 //             createAccForm.style.display ="none"
+//         }else if (logInForm.style.display = "none"){
+//             createAccForm.style.display = "none"
 //         }
 //     })
 // }

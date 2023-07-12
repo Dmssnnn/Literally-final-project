@@ -267,3 +267,4 @@ const getMenuBar = () => {
 if(window.location.href === "http://127.0.0.1:5500/authorized.html#"){
     getMenuBar()
 }
+
